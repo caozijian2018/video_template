@@ -1,0 +1,26 @@
+{
+  "words": {
+    "most_recent":"Mais recente",
+    "most_viewed":"Mais visto",
+    "most_liked":"O mais adorado",
+    "login":"ENTRAR",
+    "refresh":"Atualizar", 
+    "not_register_yet":"Ainda não se registrou? ",
+    "click_here":"Clique aqui",
+    "phone_number":"NÚMERO DE TELEFONE",
+    "phone_number_error":"ERRO DE NÚMERO DE TELEFONE",
+    "login_success":"SUCESSO DE LOGIN",
+    "please_login":"POR FAVOR ENTRE",
+    "vip_be_overdue":"VIP estar atrasado",
+    "more":"Ver Mais",
+    "home":"Home",
+    "cancelsub":"Para cancelar a assinatura de SUCESSO",
+    "age18":"Is the age 18 years old?",
+    "go4":"Se a subscrição",
+    "continue":"Adelante.",
+    "notice":"Revelación",
+    "sure":"Confirmar",
+    "cancel":"Cancelar",
+    "terms":"Termos e condições"
+  }
+}
