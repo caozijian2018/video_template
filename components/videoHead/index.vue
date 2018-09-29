@@ -1,31 +1,31 @@
 <template>
-    <div>
+    <div class="bigbox">
         <div class="head_box">
             <div class="display_flex head_innerbox  flex_jusify_space">
                 <div class="display_flex   flex_align_center">
                     <img src="../../static/img/logo.png" @click="goHome" class="cursor head_img padding_left_1" alt="">
                     <div class="display_flex flex_align_center classfication_pc">
                         <!-- <div v-if="false" @mouseover="orderselect(item.id)" @mouseleave="selectOrder=''" v-for="item in arr" @click="getList(item.id,'pc')" :key="item.id">
-                                            <div class="hover_cate_back" :class="{hover_cate_back_select:clickSelect==item.id||selectOrder==item.id}">
-                                            </div>
-                                            <span class="pcs">
-                                                {{item.name}}
-                                            </span>
-                                        </div> -->
+                                                    <div class="hover_cate_back" :class="{hover_cate_back_select:clickSelect==item.id||selectOrder==item.id}">
+                                                    </div>
+                                                    <span class="pcs">
+                                                        {{item.name}}
+                                                    </span>
+                                                </div> -->
                         <div class="cate_div" @mouseover="orderselect('to_cate')" @click="toCate()" @mouseleave="selectOrder=''">
                             <div class="hover_cate_back cataback" :class="{hover_cate_back_select:selectOrder=='to_cate'}">
                             </div>
                             <span class="pcs">
-                                                Categories
-                                            </span>
+                                                        {{$t('words.categories')}}
+                                                    </span>
                         </div>
-                        <div class="cate_div" @mouseover="orderselect('login')" @click="showLogin()" @mouseleave="selectOrder=''">
-                            <div class="hover_cate_back cataback" :class="{hover_cate_back_select:selectOrder=='login'}">
-                            </div>
-                            <span class="pcs">
-                                                login
-                                            </span>
-                        </div>
+                        <!-- <div class="cate_div" @mouseover="orderselect('login')" @click="showLogin()" @mouseleave="selectOrder=''">
+                                    <div class="hover_cate_back cataback" :class="{hover_cate_back_select:selectOrder=='login'}">
+                                    </div>
+                                    <span class="pcs">
+                                                        {{$t('words.login')}}
+                                                    </span>
+                                </div> -->
                     </div>
                 </div>
                 <div class="head_icon display_flex">
@@ -44,15 +44,16 @@
         <div class="option_box" :class="{select:showWhich=='option'}">
             <div class="width_90 margin_auto">
                 <!-- <div class="tag  singole_tag white text_center" @click="getList(item.id,'ph')" v-for="item in arr" :key="item.id">
-                    {{item.name}}
-                </div> -->
-                <video-button button-text="login" @click.native="showLogin()" class=""></video-button>
+                            {{item.name}}
+                        </div> -->
+                <video-button :button-text="$t('words.categories')" @click.native="toCate()" class=""></video-button>
+                <!-- <video-button :button-text="$t('words.login')" @click.native="showLogin()" class="margin_top_1"></video-button> -->
             </div>
         </div>
         <div class="search_box" :class="{select:showWhich=='search'}">
             <div class="width_90 margin_auto">
-                <el-input class="video_input"></el-input>
-                <video-button class="margin_top_1"></video-button>
+                <el-input @keyup.native.13="Search" class="video_input" v-model="search_word"></el-input>
+                <video-button :button-text=" $t('words.search')" @click.native="Search" class="margin_top_1"></video-button>
             </div>
         </div>
         <div class="hoverdiv head_hover" style="z-index:10002" v-if="showWhich!=''" @click="showWhich=''">
@@ -63,24 +64,26 @@
 
 <script>
     import videoButton from "../button"
+    import getCountry from "../../util/get_country";
     import bus from "../../util/bus"
     
     export default {
         data() {
             return {
+                search_word: "",
                 clickSelect: '',
                 selectOrder: '',
                 showWhich: '',
                 arr: [{
-                        name: "Date",
+                        name: this.$t('words.most_recent'),
                         id: "-create_time",
                     },
                     {
-                        name: "Like",
+                        name: this.$t('words.most_liked'),
                         id: "-favor_num",
                     },
                     {
-                        name: "Views",
+                        name: this.$t('words.most_viewed'),
                         id: "-show_num",
                     }
                 ]
@@ -90,15 +93,26 @@
             videoButton
         },
         methods: {
-            goHome() {
+    
+            Search() {
+                bus.$emit("search", this.search_word);
+                this.showWhich = ""
+                this.$store.commit("search", this.search_word);
+                this.search_word = "";
                 this.$router.push({
                     path: "/"
+                })
+            },
+            goHome() {
+                this.$router.push({
+                    path: "/?country=" + getCountry()
                 })
             },
             showLogin() {
                 this.$emit("showLogin");
             },
             toCate() {
+                this.showWhich = "";
                 this.$router.push({
                     name: "index-index-categaray"
                 })
@@ -137,178 +151,183 @@
 
 <style lang='less'>
     @import "../../assets/css/current_theme";
-    .head_box {
-        .cate_div {
-            background: @head_orange;
+    .bigbox {
+        overflow: hidden;
+        height:50px;
+        &.height0 {
+            height: 0px;
         }
-        .classfication_pc {
-            display: none;
-        }
-        .line_height_50 {
-            line-height: 50px;
-        }
-        .padding10 {
-            height: 50px;
-            display: inline-block;
-            padding: 0 10px;
-        }
-        .selectback_ground {
-            background: @light_gray;
-        }
-        position: relative;
-        z-index: 10005;
-        .head_icon {
-             transition-duration: .4s;
-            i {
-                display: inline-block;
-                height: 50px;
-                line-height: 50px;
-                padding: 0 10px;
-            }
-            & .line_box>div{
-                transition-duration: .4s;
-            }
-
-            color:#fff;
-            .selected_op {
-                .first {
-                    transform-origin: 0 0;
-                    transform:translateX(4px) rotate(39deg);
-                }
-               .secend{
-                    opacity: 0;
-                }
-                .last{
-                    transform-origin: 0 100%;
-                    transform:translateX(4px) rotate(-39deg);
-                }
-            }
-            .option_animate {
-                padding: 0 10px;
-                height: 50px;
-                width: 35px;
-                &>div {
-                    width: 100%;
-                    height: 25px;
-                    div {
-                        width: 100%;
-                        height: 3px;
-                        border-radius: 1.5px;
-                        background: #fff;
-                    }
-                }
-            }
-        }
-        .head_img {
-            height: 40px;
-        }
-        .navigator {
-            font-size: 24px;
-        }
-        background:@dark;
-        .head_innerbox {
-            height: 50px;
-            color: #fff;
-        }
-    }
-    
-    .option_box {
-        padding-top: 10px;
-        padding-bottom: 20px;
-        .singole_tag {
-            background: @dark;
-            font-weight: 600;
-            font-size: 19px;
-            margin-bottom: 8px;
-            height: 40px;
-            line-height: 40px;
-        }
-        width:100%;
-        z-index:10004;
-        position: absolute;
-        background:@light_gray;
         transition-duration: .4s;
-        transition-property: top;
-        top:-330px;
-        &.select {
-            top: 50px;
-        }
-    }
-    
-    .search_box {
-        .video_input {
-            .el-input__inner {
-                background: mix(@light_gray, #ddd, 90%);
-            }
-        }
-        padding:10px 0;
-        transition: .3s;
-        position: absolute;
-        top:-150px;
-        width:100%;
-        height:100px;
-        z-index:10004;
-        background:@light_gray;
-        &.select {
-            top: 50px;
-        }
-    }
-    
-    @media screen and (min-width :800px) {
+        transition-property: height;
         .head_box {
-            .head_icon {
-                i {
-                    padding: 0 50px;
-                }
-                .pc_option_none {
-                    display: none;
-                }
+            .cate_div {
+                background: @head_orange;
             }
             .classfication_pc {
-                display: flex;
-                height: 50px;
+                display: none;
+            }
+            .line_height_50 {
                 line-height: 50px;
-                margin-left: 20px;
-                &>div {
-                    overflow: hidden;
-                    position: relative;
-                    .hover_cate_back {
-                        left: 0;
-                        top: 0;
-                        border-bottom-left-radius: 100px;
-                        border-bottom-right-radius: 100px;
-                        right: 0;
-                        background: lighten(@head_option_back, 10%); //@head_option_back_select;
-                        bottom: 50px;
-                        transition-property: bottom;
-                        transition-duration: .6s;
-                        position: absolute;
-                        &.cataback {
-                            background: saturate(@head_orange, 50%);
+            }
+            .padding10 {
+                height: 50px;
+                display: inline-block;
+                padding: 0 10px;
+            }
+            .selectback_ground {
+                background: @light_gray;
+            }
+            position: relative;
+            z-index: 10005;
+            .head_icon {
+                transition-duration: .4s;
+                i {
+                    display: inline-block;
+                    height: 50px;
+                    line-height: 50px;
+                    padding: 0 10px;
+                }
+                & .line_box>div {
+                    transition-duration: .4s;
+                }
+                color:#fff;
+                .selected_op {
+                    .first {
+                        transform-origin: 0 0;
+                        transform: translateX(4px) rotate(39deg);
+                    }
+                    .secend {
+                        opacity: 0;
+                    }
+                    .last {
+                        transform-origin: 0 100%;
+                        transform: translateX(4px) rotate(-39deg);
+                    }
+                }
+                .option_animate {
+                    padding: 0 10px;
+                    height: 50px;
+                    width: 35px;
+                    &>div {
+                        width: 100%;
+                        height: 25px;
+                        div {
+                            width: 100%;
+                            height: 3px;
+                            border-radius: 1.5px;
+                            background: #fff;
                         }
                     }
-                    .hover_cate_back_select {
-                        bottom: -100px;
-                    }
-                    width:200px;
-                    text-align: center;
-                    font-size:17px;
-                    height:50px;
-                    // line-height:50px;
-                    background:@head_option_back;
                 }
             }
-            .head_hover {
-                display: none;
+            .head_img {
+                height: 40px;
+            }
+            .navigator {
+                font-size: 24px;
+            }
+            background:@dark;
+            .head_innerbox {
+                height: 50px;
+                color: #fff;
             }
         }
         .option_box {
-            width: 30%;
-            right: 0;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            .singole_tag {
+                background: @dark;
+                font-weight: 600;
+                font-size: 19px;
+                margin-bottom: 8px;
+                height: 40px;
+                line-height: 40px;
+            }
+            width:100%;
+            z-index:10004;
+            position: absolute;
+            background:@light_gray;
+            transition-duration: .4s;
+            transition-property: top;
+            top:-330px;
+            &.select {
+                top: 50px;
+            }
         }
         .search_box {
-            width: 30%;
-            right: 0;
+            .video_input {
+                .el-input__inner {
+                    background: mix(@light_gray, #ddd, 90%);
+                }
+            }
+            padding:10px 0;
+            transition: .3s;
+            position: absolute;
+            top:-150px;
+            width:100%;
+            height:100px;
+            z-index:10004;
+            background:@light_gray;
+            &.select {
+                top: 50px;
+            }
+        }
+        @media screen and (min-width :800px) {
+            .head_box {
+                .head_icon {
+                    i {
+                        padding: 0 50px;
+                    }
+                    .pc_option_none {
+                        display: none;
+                    }
+                }
+                .classfication_pc {
+                    display: flex;
+                    height: 50px;
+                    line-height: 50px;
+                    margin-left: 20px;
+                    &>div {
+                        overflow: hidden;
+                        position: relative;
+                        .hover_cate_back {
+                            left: 0;
+                            top: 0;
+                            border-bottom-left-radius: 150px;
+                            border-bottom-right-radius: 150px;
+                            right: 0;
+                            background: lighten(@head_option_back, 10%); //@head_option_back_select;
+                            bottom: 50px;
+                            transition-property: bottom;
+                            transition-duration: .6s;
+                            position: absolute;
+                            &.cataback {
+                                background: saturate(@head_orange, 50%);
+                            }
+                        }
+                        .hover_cate_back_select {
+                            bottom: -100px;
+                        }
+                        width:200px;
+                        text-align: center;
+                        font-size:17px;
+                        height:50px;
+                        // line-height:50px;
+                        background:@head_option_back;
+                    }
+                }
+                .head_hover {
+                    display: none;
+                }
+            }
+            .option_box {
+                width: 30%;
+                right: 0;
+            }
+            .search_box {
+                width: 30%;
+                right: 0;
+            }
         }
     }
 </style>

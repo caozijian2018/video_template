@@ -10,27 +10,30 @@
     export default {
         data() {
             return {
-                selec_ordering:"-create_time",
+                selec_ordering: "-create_time",
                 arr: [{
-                        name: "Date",
+                        name: this.$t('words.most_recent'),
                         id: "-create_time",
                     },
                     {
-                        name: "Like",
+                        name: this.$t('words.most_liked'),
+    
                         id: "-favor_num",
                     },
                     {
-                        name: "Views",
+                        name: this.$t('words.most_viewed'),
                         id: "-show_num",
                     }
                 ]
             }
         },
-        methods:{
-            getList(ordering){
-                this.selec_ordering=ordering
-                this.$emit("ordering",ordering);
-                //  bus.$emit("ordering", ordering);
+        mounted() {
+             
+        },
+        methods: {
+            getList(ordering) {
+                this.selec_ordering = ordering
+                this.$emit("ordering", ordering);
             }
         }
     }
@@ -38,10 +41,9 @@
 
 <style lang='less'>
     .order_box {
-        
-        font-size:19px;
-        .seleced_ordering{
-            font-weight:600;
+        font-size: 19px;
+        .seleced_ordering {
+            font-weight: 600;
         }
         cursor: pointer;
         width: 600px;
@@ -52,10 +54,15 @@
             color: #000;
             text-align: center;
         }
-        @media screen and (max-width:800px){
-            &{
-                width:100%;
+        @media screen and (max-width:800px) {
+            & {
+                &>div{
+                    padding:0 20px;
+                    line-height: 25px;
+                }
+                width: 100%;
             }
+
         }
     }
 </style>

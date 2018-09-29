@@ -38,8 +38,8 @@
         },
         filters:{
             secendToTime(s){
-                var H = String(Math.floor(s/3600)).padStart(2,0);
-                var m = String(Math.floor(s/60)%60).padStart(2,0);
+                var H = String(Math.floor(s/3600))//.padStart(2,0);
+                var m = String(Math.floor(s/60)%60)//.padStart(2,0);
                 var s = String((s%60)).padStart(2,0);
                 var time =H+":"+m+":"+s;
                 return time;

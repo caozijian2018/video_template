@@ -1,8 +1,8 @@
 {
   "words": {
-    "most_recent":"Mais recente",
-    "most_viewed":"Mais visto",
-    "most_liked":"O mais adorado",
+    "most_recent":"Mais recentes",
+    "most_viewed":"Mais vistos",
+    "most_liked":"Os mais adorados",
     "login":"ENTRAR",
     "refresh":"Atualizar", 
     "not_register_yet":"Ainda não se registrou? ",
@@ -21,6 +21,9 @@
     "notice":"Revelación",
     "sure":"Confirmar",
     "cancel":"Cancelar",
-    "terms":"Termos e condições"
+    "terms":"Termos e condições",
+    "categories":"Categorias",
+    "search":"pesquisa"
+
   }
 }

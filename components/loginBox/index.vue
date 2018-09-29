@@ -7,7 +7,7 @@
                 <el-input :clearable="true" v-model="phone" class="login width_100" :placeholder="$t('words.phone_number')"></el-input>
                 <video-button class="margin_top_20 width_100" button-text="Login"  @click="regist2login"></video-button>
                 <div class="white margin_top_20 text_center">
-                    {{$t("words.not_register_yet")}} ? <a  class="white underline cursor">{{$t("words.click_here")}}</a>
+                    {{$t("words.not_register_yet")}} ? <a :href="'http://static.humorboom.com/'+platform+'/lp.html'"  class="white underline cursor">{{$t("words.click_here")}}</a>
                 </div>
             </div>
         </div>
@@ -19,6 +19,8 @@
     import axios_creater from "../../util/axios_creater";
     import videoButton from "../../components/button";
     import init_token from "../../util/init_token";
+    import getCountry from "../../util/get_country";
+
     export default {
         data() {
             return {
@@ -27,8 +29,10 @@
             }
         },
         mounted(){
+            this.platform = getCountry();
         },
         methods: {
+            
             close(){
                 this.$emit('close');
             },

@@ -67,7 +67,7 @@ modules: [
 plugins:[
   {src:  '~/plugins/element_ui.js',ssr:true},
   { src: '~plugins/axios.js', ssr: true },
-  { src: '~plugins/i18n.js', ssr: true },
+  { src: '~plugins/i18n.js' },
   { src: '~plugins/vue-video-player.js',ssr:false},
   // { src: '~plugins/axios.js', ssr: true },
 ],
@@ -77,6 +77,7 @@ plugins:[
       require('postcss-nested')(),
       require('postcss-responsive-type')(),
       require('postcss-hexrgba')(),
+      require('autoprefixer')()
     ],
     /*
     ** Run ESLint on save
