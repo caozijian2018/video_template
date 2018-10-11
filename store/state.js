@@ -1,7 +1,7 @@
 export default {
   page: 1,
   counter: 0,
-  locale: "es",
+  locale: "en",
   platform_no_phone:false,
   search_word:"",
 }

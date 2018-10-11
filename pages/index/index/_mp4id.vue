@@ -27,7 +27,7 @@
         methods: {
             haslogin() {
                 if (!localStorage.video_token) {
-                    this.surebox();
+                   // this.surebox();
                 } else {
                     this.getMp4src()
                 }

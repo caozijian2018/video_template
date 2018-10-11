@@ -137,17 +137,17 @@
             }
             .ittemstage {
                 .selected_cate {
-                    background: orange;
+                    background: #f1aa8f;
                 }
                 &:hover {
                     .cate_border_bottom {
-                        background: orange;
+                        background: #f1aa8f;
                     }
                 }
                 cursor: pointer;
                 position: relative;
                 width: 200px;
-                background: rgba(82, 82, 82, 1.0);
+                background: #e6d0d0;//rgba(82, 82, 82, 1.0);
                 color: #fff;
                 font-size: 16px;
             }

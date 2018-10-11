@@ -19,12 +19,12 @@ module.exports = {
 
  dev: (process.env.NODE_ENV !== 'production'),
  env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3002',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3003',
     API_URL: API_URL,
-    WTAT_THIS_APP:"humorboom"
+    WTAT_THIS_APP:"sex-garden"
   },
   head: {
-    title: 'HumorBoom',
+    title: 'sex-garden',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -45,10 +45,10 @@ module.exports = {
    "./assets/css/global_css.css"
  ],
  proxy: {
-  '/api': {
-      target: 'http://humorboom.com/backend/api/',
+  '/backend': {
+      target: 'http://sex-garden.com',
       pathRewrite: {
-          '^/api': '/'
+          '^/backend': '/backend'
       }
   }
 },

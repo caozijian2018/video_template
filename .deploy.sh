@@ -1,4 +1,4 @@
 git pull
 npm install 
 npm run build
-pm2 restart video_template
+pm2 restart sex-garden

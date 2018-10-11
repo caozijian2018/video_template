@@ -29,7 +29,7 @@
       store,
       query
     }) {
-      var lang = query.country || "pt";
+      var lang = query.country || "en";
       store.state.locale = query.country;
       return Promise.all([
         glo_axios("album", "get", {
@@ -108,8 +108,8 @@
                     localStorage.from_ = from_;
                     init_token();
                 }).finally(()=>{
-                  var new_url = location.href.replace(/&phone=\d*/, '');
-                  new_url = new_url.replace(/&from=\w*/, '');
+                  var new_url = location.href.replace(/[?&]phone=\d*/, '');
+                  new_url = new_url.replace(/[?&]from=\w*/, '');
                   location.href = new_url;
                 })
       },

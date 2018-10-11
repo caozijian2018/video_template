@@ -1,0 +1,28 @@
+{
+  "words": {
+    "most_recent": "Le plus récent",
+    "most_viewed": "Les plus vues",
+    "most_liked": "Le plus aimé",
+    "login": "Connexion",
+    "refresh": "Refresh",
+    "not_register_yet": "Pas encore enregistré?",
+    "click_here": "Cliquez ici",
+    "phone_number": "NUMÉRO DE TÉLÉPHONE",
+    "phone_number_error": "ERREUR DE NUMÉRO DE TÉLÉPHONE",
+    "login_success": "SUCCÈS DE CONNEXION",
+    "please_login": "VEUILLEZ VOUS CONNECTER",
+    "vip_be_overdue": "VIP Soyez en retard",
+    "more": "plus",
+    "home": "Accueil",
+    "cancelsub": "Para cancelar a assinatura de SUCESSO",
+    "age18": "Est-ce que l'âge de 18 ans?",
+    "go4": "s'abonner ou non",
+    "continue": "continuer",
+    "notice": "remarquer",
+    "sure": "sûr",
+    "cancel": "Annuler",
+    "terms": "termes",
+    "categories": "catégories",
+    "search": "chercher"
+  }
+}

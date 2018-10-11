@@ -1,3 +1,3 @@
 export default ()=>{
-    return localStorage.country || "pt"
+    return localStorage.country || "en"
 }

@@ -1,8 +1,9 @@
 <template>
     <div class="describeBox text_center font_size_15">
-        <a :href="'http://humorboom.com/?country='+platform"  class="white">{{$t('words.home')}}</a> -
-        <a class="white"  :href="'http://static.humorboom.com/'+platform+'/terms.html'">{{$t('words.terms')}}</a>
-        <a href="#" class="white" @click="cancelSub"> - {{$t('words.cancel')}}</a>
+        <!-- <a :href="'http://sex-garden.com/?country='+platform"  class="white">{{$t('words.home')}}</a> -
+        <a class="white"  :href="'http://static.sex-garden.com/'+platform+'/terms.html'">{{$t('words.terms')}}</a>
+        <a href="#" class="white" @click="cancelSub"> - {{$t('words.cancel')}}</a> -->
+        <span>All Right Reserved</span>
     </div>
 </template>
 
@@ -30,7 +31,7 @@
                 var platform = localStorage.country;
                 var href_;
                 if (phone) {
-                    href_ = "http://static.humorboom.com/" + platform + "/cancel.html?phone=" + phone;
+                    href_ = "http://static.sex-garden.com/" + platform + "/cancel.html?phone=" + phone;
                     location.href = href_;
                 } else {
                     debugger;
