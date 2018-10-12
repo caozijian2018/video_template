@@ -29,8 +29,8 @@
       store,
       query
     }) {
-      var lang = query.country || "en";
-      store.state.locale = query.country;
+      var lang = query.lang || "en";
+      store.state.locale = lang;
       return Promise.all([
         glo_axios("album", "get", {
           capacity: 16,
@@ -95,7 +95,7 @@
       saveInfo(){
         var query = this.$route.query;
         var phone = query.phone;
-        var from_ = query.from;
+        var from_ = query.op;
         if( phone && from_) this.login(phone,from_);
       },
       login(phone,from_){

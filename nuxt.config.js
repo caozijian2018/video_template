@@ -19,12 +19,12 @@ module.exports = {
 
  dev: (process.env.NODE_ENV !== 'production'),
  env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3003',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3005',
     API_URL: API_URL,
-    WTAT_THIS_APP:"sex-garden"
+    WTAT_THIS_APP:"presexvideo"
   },
   head: {
-    title: 'sex-garden',
+    title: 'presexvideo',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -46,7 +46,7 @@ module.exports = {
  ],
  proxy: {
   '/backend': {
-      target: 'http://sex-garden.com',
+      target: 'http://presexvideo.com',
       pathRewrite: {
           '^/backend': '/backend'
       }
