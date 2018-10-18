@@ -160,6 +160,9 @@
         transition-duration: .4s;
         transition-property: height;
         .head_box {
+            .cate_div {
+                background: @head_orange;
+            }
             .classfication_pc {
                 display: none;
             }
@@ -299,7 +302,7 @@
                             transition-duration: .6s;
                             position: absolute;
                             &.cataback {
-                                background:darken( @dark,5%);//saturate(@head_orange, 50%);
+                                background: saturate(@head_orange, 50%);
                             }
                         }
                         .hover_cate_back_select {
@@ -310,7 +313,7 @@
                         font-size:17px;
                         height:50px;
                         // line-height:50px;
-                        background:lighten(@dark,5%);
+                        background:@head_option_back;
                     }
                 }
                 .head_hover {

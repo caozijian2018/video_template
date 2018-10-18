@@ -1,7 +1,7 @@
 <template>
     <div class="container display_flex flex_column"  :style="{height:height_}">
         <video-head @showLogin="showLogin" class=""  :class="{height0:is_scroll_bottom}"></video-head>
-        <div @scroll="scroll" class="flex_1 overflow_scroll" style="">
+        <div  class="flex_1 overflow_scroll scroll_box" style="">
             <login-box v-if="show_login" @close="show_login=false"></login-box>
             <nuxt-child :is-scroll-bottom="is_scroll_bottom"></nuxt-child>
         </div>
@@ -12,6 +12,7 @@
     import videoHead from "../../components/videoHead"
     import loginBox from "../../components/loginBox"
     import initLanguage from "../../util/init_language";
+    import initOp from "../../util/init_op";
     import isScrollBottom from "../../util/is_scroll_bottom";
 
     export default {
@@ -28,7 +29,8 @@
             }
         },
         mounted() {
-            this.saveCountry();
+            this.saveLang();
+            this.saveOp();
             this.setHeight();
             this.watchOnresize();
         },
@@ -37,9 +39,13 @@
                 var is_scroll_bottom = isScrollBottom(res,this);
                 this.is_scroll_bottom = is_scroll_bottom;
             },
-            saveCountry() {
-                var country = this.$route.query.country;
-                initLanguage(country)
+            saveLang() {
+                var lang = this.$route.query.lang;
+                initLanguage(lang)
+            },
+            saveOp() {
+                var op = this.$route.query.op;
+                initOp(op)
             },
             showLogin() {
                 this.show_login = true;

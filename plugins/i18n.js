@@ -10,7 +10,14 @@ export default ({ app, store }) => {
       'es':require('~/locales/es.json'),
       'nl':require('~/locales/nl.json'),
       'pt':require('~/locales/pt.json'),
-      'fr':require('~/locales/fr.json')
+      'at':require('~/locales/de.json'),
+      'ch':require('~/locales/de.json'),
+      'de':require('~/locales/de.json'),
+      'bl':require('~/locales/bl.json'),
+      'bn':require('~/locales/bn.json'),
+      'fr':require('~/locales/fr.json'),
+      'it':require('~/locales/it.json'),
+      'zh-tw':require('~/locales/tw.json')
     }
   })
   app.i18n.path = (link) => {

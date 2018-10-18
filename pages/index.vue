@@ -14,10 +14,8 @@
   Vue.prototype.$jquery = jquery;
   import init_token from "../util/init_token";
   init_token();
-  import init_language from "../util/init_language";
   export default {
     mounted() {
-      // window.onresize = history.go(0)
     }
   }
 </script>

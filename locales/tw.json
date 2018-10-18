@@ -1,0 +1,28 @@
+{
+  "words": {
+    "most_recent": "最近的",
+    "most_viewed": "最受關注",
+    "most_liked": "最喜歡的",
+    "login": "登錄",
+    "refresh": "刷新",
+    "not_register_yet": "還沒註冊？",
+    "click_here": "點擊這裡",
+    "phone_number": "電話號碼",
+    "phone_number_error": "電話號碼錯誤",
+    "login_success": "登錄成功",
+    "please_login": "請登錄",
+    "vip_be_overdue": "VIP逾期",
+    "more": "更多",
+    "home": "家",
+    "cancelsub": "Para cancelar a assinatura de SUCESSO",
+    "age18": "年齡18歲？",
+    "go4": "是否訂閱",
+    "continue": "繼續",
+    "notice": "注意",
+    "sure": "確認",
+    "cancel": "取消",
+    "terms": "條款",
+    "categories": "類別",
+    "search": "搜索"
+  }
+}

@@ -8,6 +8,8 @@
 <script>
     import mp4 from "../../../components/mp4"
     import go4url from "../../../util/go4url"
+    import getCountry from "../../../util/get_country"
+
   import videoFooter from "../../../components/footer";
 
     export default {
@@ -22,12 +24,23 @@
             }
         },
         mounted() {
-            this.haslogin();
+            this.differenceOp();
         },
         methods: {
+            differenceOp(){
+                var op= getCountry();
+                switch (op) {
+                    case "tw":
+                        (()=>{
+                           this.getMp4src(); 
+                        })()
+                        break;
+                    default:this.haslogin();
+                }
+            },
             haslogin() {
                 if (!localStorage.video_token) {
-                   // this.surebox();
+                    this.surebox();
                 } else {
                     this.getMp4src()
                 }

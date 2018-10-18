@@ -28,7 +28,7 @@
     
     import videoDiv from "../../../../components/video_div";
     import pcOrPhone from "../../../../util/get_pc_or_phone";
-    import getCountry from "../../../../util/get_country";
+    import getLang from "../../../../util/get_lang";
     import videoFooter from "../../../../components/footer";
     
     export default {
@@ -40,6 +40,8 @@
             store
         }) {
             var lang = store.state.locale;
+            console.log("lang");
+            console.log(lang);
             return Promise.all([
                 glo_axios("tag", "get", {
                     ordering: "-create_time",
@@ -75,13 +77,13 @@
             }
         },
         mounted() {
-            this.setCountry();
+            this.setLang();
             this.getList();
             this.pcOrPhone = pcOrPhone();
         },
         methods: {
-            setCountry() {
-                this.country = getCountry();
+            setLang() {
+                this.country = getLang();
             },
             moves(e, index, idd) {
                 this.select_index = index;
@@ -137,17 +139,17 @@
             }
             .ittemstage {
                 .selected_cate {
-                    background: #f1aa8f;
+                    background: orange;
                 }
                 &:hover {
                     .cate_border_bottom {
-                        background: #f1aa8f;
+                        background: orange;
                     }
                 }
                 cursor: pointer;
                 position: relative;
                 width: 200px;
-                background: #e6d0d0;//rgba(82, 82, 82, 1.0);
+                background: rgba(82, 82, 82, 1.0);
                 color: #fff;
                 font-size: 16px;
             }

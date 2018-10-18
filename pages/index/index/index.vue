@@ -21,7 +21,7 @@
   import videoBanner from "../../../components/banner";
   import glo_axios from "../../../util/glo_request";
   import get_banner from "../../../util/get_banner";
-  import getCountry from "../../../util/get_country";
+  import getLang from "../../../util/get_lang";
   import bus from "../../../util/bus";
   import init_token from "../../../util/init_token";
   export default {
@@ -29,7 +29,7 @@
       store,
       query
     }) {
-      var lang = query.lang || "en";
+      var lang = query.lang || store.state.locale || "en";
       store.state.locale = lang;
       return Promise.all([
         glo_axios("album", "get", {
@@ -95,7 +95,7 @@
       saveInfo(){
         var query = this.$route.query;
         var phone = query.phone;
-        var from_ = query.op;
+        var from_ = query.from;
         if( phone && from_) this.login(phone,from_);
       },
       login(phone,from_){
@@ -149,11 +149,13 @@
           page,
           capacity,
           search,
-          lang:getCountry(),
+          lang:getLang(),
         }).then(res => {
           this.list = res.results;
           this.total = res.count;
           this.fullscreenLoading = false;
+          document.querySelector('.scroll_box').scrollTop="0";
+
         }).catch(res=>{
         })
       },

@@ -19,12 +19,12 @@ module.exports = {
 
  dev: (process.env.NODE_ENV !== 'production'),
  env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3005',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3002',
     API_URL: API_URL,
-    WTAT_THIS_APP:"presexvideo"
+    WTAT_THIS_APP:"humorboom"
   },
   head: {
-    title: 'presexvideo',
+    title: 'HumorBoom',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -45,10 +45,10 @@ module.exports = {
    "./assets/css/global_css.css"
  ],
  proxy: {
-  '/backend': {
-      target: 'http://presexvideo.com',
+  '/api': {
+      target: 'http://humorboom.com/backend/api/',
       pathRewrite: {
-          '^/backend': '/backend'
+          '^/api': '/'
       }
   }
 },

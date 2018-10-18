@@ -1,0 +1,28 @@
+{
+    "words": {
+      "most_recent":"Najnowszy",
+      "most_viewed":"Najczęściej oglądane",
+      "most_liked":"Najbardziej lubiany",
+      "login":"ZALOGUJ SIĘ",
+      "refresh":"Odświeżać", 
+      "not_register_yet":"Nie rejestrujesz się jeszcze?",
+      "click_here":"Kliknij tutaj",
+      "phone_number":"NUMER TELEFONU",
+      "phone_number_error":"BŁĄD NUMERU TELEFONU",
+      "login_success":"SUKCES LOGOWANIA",
+      "please_login":"PROSZĘ SIĘ ZALOGOWAĆ",
+      "vip_be_overdue":"VIP Być spóźnionym",
+      "more":"jeszcze",
+      "home":"Dom",
+      "cancelsub":"Para cancelar a assinatura de SUCESSO",
+      "age18":"Czy masz 18 lat?",
+      "go4":"Czy subskrybować",
+      "continue":"dalej",
+      "notice":"ogłoszenie",
+      "sure":"potwierdzać",
+      "cancel":"Anuluj",
+      "terms":"warunki",
+      "categories":"kategorie",
+    "search":"Szukaj"
+    }
+  }

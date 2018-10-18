@@ -1,0 +1,29 @@
+
+{
+    "words": {
+      "most_recent": "Neueste",
+      "most_viewed": "Meist gesehen",
+      "most_liked": "Most Liked",
+      "login ":"Einloggen",
+      "refresh": "Aktualisieren",
+      "not_register_yet": "Noch nicht registriert?",
+      "click_here": "Klicken Sie hier",
+      "phone_number": "TELEFONNUMMER",
+      "phone_number_error": "TELEFONNUMMER FEHLER",
+      "login_success": "LOGIN ERFOLG",
+      "please_login": "BITTELOGIN",
+      "vip_be_overdue": "VIP sei überfällig",
+      "more":"mehr",
+      "home":" zu Hause",
+      "cancelsub": "Para cancellar eine assinatura de SUCESSO",
+      "age18": "Ist das Alter 18 Jahre alt?",
+      "go4": "Ob abonniert werden soll oder nicht",
+      "continue": "weiter",
+      "notice": "Revelación",
+      "sure": "bestätigen",
+      "cancel": "Stornieren",
+      "terms": "Begriffe",
+      "categories":"Kategorien",
+      "search":"Suche"
+    }
+  }

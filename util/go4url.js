@@ -34,10 +34,10 @@ export default (unlogin)=>{
     switch(country){
         case "pt": (()=>{
             dcbService="PRD_DREAMFII_PT_HUMORBOOM_GENERIC";
-            dcbReturnUrl="http://static.sex-garden.com/pt/welcome.html"})();break;
+            dcbReturnUrl="http://static.humorboom.com/pt/welcome.html"})();break;
         case "es": (()=>{
             dcbService="PRD_DREAMFII_ES_HUMORBOOM";
-            dcbReturnUrl="http://static.sex-garden.com/es/subscribed.html"})();break;
+            dcbReturnUrl="http://static.humorboom.com/es/subscribed.html"})();break;
     }
     var base_url = "http://wf.mobibox.pt/api/wbV2WebFlow/";
     base_url += "?dcbReturnUrl="+encodeURIComponent(dcbReturnUrl+islogin);

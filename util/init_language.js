@@ -1,14 +1,14 @@
 import store from "../store"
-export default (country_) => {
+export default (lang_) => {
   if (process.browser) {
-    var country;
-    if (country_) {
-      localStorage.country = country_;
-      country = country_;
+    var lang;
+    if (lang_) {
+      localStorage.lang = lang_;
+      lang = lang_;
     } else {
-      country = localStorage.country;
+      lang = localStorage.lang;
     }
-    store().commit('setLang', country);
+    store().commit('setLang', lang);
     // alert(store().state.locale)
     // alert(store().getters.getLang+"getlangggg");
 

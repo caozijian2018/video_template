@@ -1,0 +1,28 @@
+{
+    "words": {
+      "most_recent":"অতি সম্প্রতি",
+      "most_viewed":"সর্বাধিক দেখা",
+      "most_liked":"সবচেয়ে পছন্দ",
+      "login":"লগইন",
+      "refresh":"সতেজ করা", 
+      "not_register_yet":"এখনো নিবন্ধন করবেন না?",
+      "click_here":"এখানে ক্লিক করুন",
+      "phone_number":"ফোন নম্বর",
+      "phone_number_error":"ফোন নম্বর ত্রুটি",
+      "login_success":"লগইন সাফল্য",
+      "please_login":"দয়া করে লগইন করুন",
+      "vip_be_overdue":"ভিআইপি মেয়াদ হতে হবে",
+      "more":"অধিক",
+      "home":"বাড়ি",
+      "cancelsub":"Para cancelar a assinatura de SUCESSO",
+      "age18":"বয়স 18 বছর বয়সী?",
+      "go4":"সাবস্ক্রাইব করতে হবে কিনা",
+      "continue":"অবিরত",
+      "notice":"বিজ্ঞপ্তি",
+      "sure":"নিশ্চিত করা",
+      "cancel":"বাতিল",
+      "terms":"পদ",
+      "categories":"বিভাগ",
+    "search":"অনুসন্ধান"
+    }
+  }
