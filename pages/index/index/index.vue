@@ -31,11 +31,13 @@
     }) {
       var lang = query.lang || store.state.locale || "en";
       store.state.locale = lang;
+      var page=store.getters.getPage;
+
       return Promise.all([
         glo_axios("album", "get", {
           capacity: 16,
           ordering: "-create_time",
-          page:1,
+          page,
           lang
         }),
         glo_axios("site", "get", {
@@ -46,6 +48,7 @@
           list: res[0].results,
           total: res[0].count,
           banner: res[1],
+          page_:page
         }
       });
     },
@@ -153,6 +156,7 @@
         }).then(res => {
           this.list = res.results;
           this.total = res.count;
+          this.$store.commit("setPage",page);
           this.fullscreenLoading = false;
           document.querySelector('.scroll_box').scrollTop="0";
 
