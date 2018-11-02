@@ -5,7 +5,6 @@
         <a href="#" class="white" @click="cancelSub" v-if="show_cancel"> - {{$t('words.cancel')}}</a>
     </div>
 </template>
-
 <script>
     import getCountry from "../../util/get_country"
     import go4url from "../../util/go4url"
@@ -71,7 +70,7 @@
 <style lang='less'>
     @import "../../assets/css/current_theme.less";
     .describeBox {
-        background: @light_gray;
+        background: @app_font_color;
         padding: 10px;
         color: #fff;
     }

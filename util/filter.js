@@ -1,6 +1,6 @@
 import Vue from "vue"
 Vue.filter("first10", (val) => {
-  return val.length > 25 ? val.substring(0, 25) + '...' : val;
+  return val.length > 13 ? val.substring(0, 13) + '...' : val;
 });
 Vue.filter("last10", (val) => {
   if (process.browser) {

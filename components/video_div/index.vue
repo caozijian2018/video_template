@@ -5,23 +5,13 @@
             <div class="width_100 height_100 img_box">
                 <img @load="loadImg($event)" :src="item.cover" class="pcs video_img_box" style="" alt="">
             </div>
-            <div class="hoverdiv mp4hover">
-                <div class="white pcs">
-                    WATCH IT <i class="iconfont icon-xiangyou"></i>
-                </div>
-            </div>
-            <div class="video_box_icon white">
-                <i class="iconfont icon-bofang"></i> {{item.video_duration | secendToTime}}
-            </div>
         </div>
         <div class="padding_1 font back_white">
-            <div class="title_text">
-                {{item.title}}
+            <div class="title_text display_flex">
+                {{item.title|first10}}
             </div>
-            <div class="box_footer display_flex flex_align_center  margin_top_10">
-                <i class="iconfont icon-shijian"></i> {{item.create_time | yearMonthDay}}
-                <i class="padding_left_1 iconfont icon-kanguo"></i> {{item.show_num+1068}}
-                <i class="padding_left_1 iconfont icon-xihuan"></i> {{item.id}}
+            <div class="button_play width_100 text_center font_size_8 margin_top_1 white">
+                Play It
             </div>
         </div>
     </div>
@@ -93,8 +83,16 @@
 <style lang='less'>
     @import "../../assets/css/current_theme";
     .video_box {
+        .button_play{
+            height:40px;
+            line-height: 40px;
+            background:@app_orange;
+        }
         .title_text {
             font-size: 19px;
+            color:@app_font_color;
+            height:40px;
+            align-items: center;
         }
         transition-property: box-shadow;
         transition-duration: .4s;

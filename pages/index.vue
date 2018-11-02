@@ -27,7 +27,7 @@
   @import "../assets/css/current_app";
 
   body {
-    background: @gray_back;
+    background: #fff;
   }
   
   .container {
